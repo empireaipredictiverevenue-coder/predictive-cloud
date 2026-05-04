@@ -1,0 +1,20 @@
+{
+  "name": "hermes-dashboard-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3002 -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "agi": "node scripts/agi_orchestrator.js",
+    "plan": "node app/api/agi/plan.js",
+    "schedule": "node scripts/agi_scheduler.js"
+  },
+  "dependencies": {
+    "next": "^16.2.4",
+    "nodemailer": "^8.0.7",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}

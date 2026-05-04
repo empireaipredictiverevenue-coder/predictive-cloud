@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  empire-ai-app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - FROM_ADDRESS=${FROM_ADDRESS}
+      - FROM_NAME=${FROM_NAME}
+    restart: always
