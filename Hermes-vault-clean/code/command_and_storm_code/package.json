@@ -4,6 +4,9 @@
   "workspaces": [
     "Hermes-vault-clean/code/command_and_storm_code"
   ],
+  "dependencies": {
+    "resend": "^6.1.3"
+  },
   "scripts": {
     "build": "npm --prefix Hermes-vault-clean/code/command_and_storm_code run build",
     "start": "npm --prefix Hermes-vault-clean/code/command_and_storm_code run start",
