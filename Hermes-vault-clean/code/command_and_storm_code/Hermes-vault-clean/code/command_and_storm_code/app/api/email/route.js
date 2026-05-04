@@ -11,7 +11,7 @@ try {
 export async function POST(req) {
   try {
     const body = await req.json()
-    // In a real environment, you would call: await resend.emails.send({...payload...})
+    // Real call would be: await resend.emails.send(payload)
     return NextResponse.json({ success: true, usingResend: !!resend?.emails?.send })
   } catch {
     return NextResponse.json({ success: false, error: 'Invalid request' }, { status: 400 })
