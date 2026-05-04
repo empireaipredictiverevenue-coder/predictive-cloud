@@ -3,15 +3,17 @@ import { NextResponse } from 'next/server'
 export async function POST(req) {
   try {
     const body = await req.json()
-    // Instantiate resend at runtime if available, else fallback
-    let resend
+    let client = null
     try {
-      const { Resend } = require('resend')
-      resend = new Resend(process.env.RESEND_API_KEY)
+      const mod = await import('resend')
+      const Resend = mod.Resend || mod.default
+      if (Resend) {
+        client = new Resend(process.env.RESEND_API_KEY)
+      }
     } catch {
-      resend = { emails: { send: async () => ({}) } }
+      client = null
     }
-    return NextResponse.json({ success: true, usingResend: !!resend?.emails?.send })
+    return NextResponse.json({ success: true, usingResend: !!client })
   } catch {
     return NextResponse.json({ success: false, error: 'Invalid request' }, { status: 400 })
   }
