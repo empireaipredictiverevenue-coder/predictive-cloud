@@ -1,0 +1,28 @@
+# Ignore vault PDFs and non-code artifacts
+vault/
+vault_backup/
+usb/npm-cache/
+usb/
+empire-architect/
+empire-revenue-pulse/
+empireai-core/
+
+# Common large build artifacts and caches
+node_modules/
+.next/
+dist/
+build/
+backup/
+.env*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# PDFs and executables that might sneak in
+*.pdf
+*.exe
+*.dll
+*.zip
+.env.local
+secrets.local.json

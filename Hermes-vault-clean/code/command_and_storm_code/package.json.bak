@@ -1,0 +1,1 @@
+{"name":"empire-ai-dashboard","version":"1.0.0","scripts":{"predev":"node scripts/load_secrets.js","dev":"next dev","start":"next start","smoke":"node scripts/smoke_test.js","validate-keys":"node scripts/validate_keys.js"},"dependencies":{"next":"latest","react":"latest","react-dom":"latest"}}
