@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 ENV NODE_OPTIONS=--max_old_space_size=1024
 COPY package*.json ./
